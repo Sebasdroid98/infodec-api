@@ -16,7 +16,6 @@ class CreatePaisTable extends Migration
         Schema::create('paises', function (Blueprint $table) {
             $table->id();
             $table->string('nombre', 10);
-            $table->string('codigo_clima', 10);
             $table->string('codigo_moneda', 10);
             $table->timestamps();
         });

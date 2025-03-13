@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCiudadsTable extends Migration
+class CreateCiudadesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,8 @@ class CreateCiudadsTable extends Migration
     {
         Schema::create('ciudades', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 20);
+            $table->string('nombre', 30);
+            $table->string('codigo_clima', 30);
 
             $table->unsignedBigInteger('pais_id');
             $table->foreign('pais_id')
@@ -24,6 +25,7 @@ class CreateCiudadsTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
+            // $table->foreignId('pais_id')->constrained('paises')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
