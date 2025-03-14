@@ -20,7 +20,7 @@ class HistorialController extends Controller
             ->limit(5)
             ->get();
 
-        $query->load('ciudad');
+        $query->load('ciudad.pais');
 
         return response()->json($query);
     }
